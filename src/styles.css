@@ -1,0 +1,140 @@
+/* CSS Variables / custom properties */
+:root {
+  --ff-cursive: "Snell Roundhand", sans-serif;
+  --ff-normal: "Montserrat", sans-serif;
+  --fw: 900;
+  /* justify-content: center;
+  align-items: center; */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  text-align: center;
+  overflow: hidden;
+  width: 100%;
+}
+
+.App {
+  background-color: rgb(0, 0, 0);
+  color: #fff;
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.prefix {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem;
+  width: 100%;
+  /* maxwidth to prevent 'family' from spreading out on larger screens */
+  max-width: 550px;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  font-family: var(--ff-cursive);
+  font-weight: var(--fw);
+  line-height: 1;
+  color: #ffffff;
+}
+
+.spaced-heading {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.target {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.target-swap {
+  width: 45px;
+  height: 45px;
+  background-color: rgba(0, 0, 0);
+  border: 0;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.target-swap.active > span {
+  font-family: var(--ff-cursive);
+  font-weight: var(--fw);
+}
+
+.target-swap > * {
+  width: 45px;
+  height: 45px;
+}
+
+.target-swap > img {
+  /* increase the width of the overall image. there is overflow: hidden
+      on the parent elemnt (target-swap) which prevents the extra
+      background from showing */
+  width: 400%;
+  height: 400%;
+  /* use obect-fit: contain to fit the image to the size of the container
+      Then use object-position to position the enlarged image to the x and 
+      y axis of the parent element;
+  */
+  object-fit: contain;
+  object-position: -50px -65px;
+}
+
+.target-swap > span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-weight: 900;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  border: 1px solid #fff;
+  cursor: pointer;
+}
+
+.target.scrambled span {
+  font-family: var(--ff-normal);
+  font-weight: var(--fw);
+  background-color: rgba(0, 0, 0, 0.9);
+}
+.backspace {
+  font-weight: var(--fw);
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #ffffff;
+  padding: 1rem 1rem;
+  text-transform: uppercase;
+}
+
+.backspaceInstruction {
+  font-weight: var(--fw);
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #ffffff;
+  font-size: 14px;
+  padding: 3rem 1rem 1rem 2rem;
+  text-transform: uppercase;
+}
+
+.backspaceletters {
+  font-weight: var(--fw);
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #ffffff;
+  font-size: 12px;
+  padding: 1rem 1rem;
+}
+
+.audio-media {
+  visibility: hidden;
+}
